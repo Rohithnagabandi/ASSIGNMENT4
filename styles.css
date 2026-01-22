@@ -382,6 +382,10 @@ footer {
 .footer-links a:hover {
     color: #ffd700;
 }
+.social-icons h2{
+    text-align:center ;
+    padding-left: 40px;
+}
 
 .social-icons a{
     display: flex;
