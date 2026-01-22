@@ -1,0 +1,476 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Modern, clean font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient for depth */
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+.navbar:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 25%;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 0.5rem;
+}
+
+.nav-links li a:hover {
+    color: #ffd700; /* Gold accent on hover */
+    border-bottom: 2px solid #ffd700;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Light blue gradient */
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.hero-left {
+    flex: 1;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-left h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #004085;
+}
+
+.hero-left p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+#book-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+#book-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 1s ease-out;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Overview */
+.service-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.achievement {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.achievement:hover {
+    transform: scale(1.05);
+}
+
+.achievement h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Booking Section */
+.booking-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.booking-left, .booking-right {
+    padding: 2rem;
+    border-radius: 10px;
+    background: #f8f9fa;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-left h2 {
+    margin-bottom: 1.5rem;
+    color: #004085;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.add-btn, .remove-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.remove-btn {
+    background: #dc3545;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+.cart {
+    margin-bottom: 2rem;
+}
+
+.cart h3 {
+    margin-bottom: 1rem;
+    color: #004085;
+}
+
+#cart-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+#cart-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-form h3 {
+    margin-bottom: 1rem;
+    color: #004085;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.booking-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#book-now-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+#book-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+}
+
+#thank-you-msg {
+    margin-top: 1rem;
+    color: #28a745;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Quality Description */
+.quality-description {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    text-align: center;
+}
+
+.quality-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #004085;
+}
+
+.qualities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.quality {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.quality:hover {
+    transform: translateY(-10px);
+}
+
+.quality h3 {
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    text-align: center;
+}
+
+.newsletter h2 {
+    margin-bottom: 2rem;
+}
+
+.newsletter input {
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#subscribe-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#subscribe-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 50px;
+    border-radius: 25%;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffd700;
+}
+
+.social-icons a{
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    gap: 1rem;
+}
+.social-icons ion-icon{
+    height: 30px;
+    transition: transform 0.3s ease;
+    padding-left: 40px;
+    color: white;
+}
+
+.social-icons a >ion-icon:hover {
+    transform: scale(2.0);
+}
+.ig:hover{
+    color: #e13067;
+}
+.fb:hover{
+    color: #3b5998;
+}
+.tw:hover{
+    color: #00aced;
+}
+/* Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .booking-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+    .service-overview {
+        grid-template-columns: 1fr;
+    }
+    .qualities {
+        grid-template-columns: 1fr;
+    }
+    .newsletter input {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 1.8rem;
+    }
+    .service-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .add-btn, .remove-btn {
+        margin-top: 0.5rem;
+    }
+}
