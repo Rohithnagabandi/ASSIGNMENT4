@@ -10,19 +10,17 @@ document.getElementById('book-btn').addEventListener('click', () => {
     document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Add item to cart
-document.querySelectorAll('.add-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+// Handle add/remove item to/from cart using event delegation
+document.querySelector('.booking-left').addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-btn')) {
         const name = e.target.dataset.name;
         const price = parseFloat(e.target.dataset.price);
         cart.push({ name, price });
         updateCart();
-    });
-});
-
-// Remove item from cart
-document.querySelectorAll('.remove-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+        e.target.textContent = "remove item";
+        e.target.classList.remove('add-btn');
+        e.target.classList.add('remove-btn');
+    } else if (e.target.classList.contains('remove-btn')) {
         const name = e.target.dataset.name;
         const price = parseFloat(e.target.dataset.price);
         const index = cart.findIndex(item => item.name === name);
@@ -30,7 +28,10 @@ document.querySelectorAll('.remove-btn').forEach(btn => {
             cart.splice(index, 1);
             updateCart();
         }
-    });
+        e.target.textContent = "Add Item";
+        e.target.classList.remove('remove-btn');
+        e.target.classList.add('add-btn');
+    }
 });
 
 // Update cart display
