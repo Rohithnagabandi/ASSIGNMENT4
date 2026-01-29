@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init('2NRluruulzHwV94Ug'); // Replace with your EmailJS public key
+emailjs.init('2NRluruulzHwV94Ug'); 
 
 // Cart data
 let cart = [];
@@ -66,20 +66,26 @@ document.getElementById('book-now-btn').addEventListener('click', () => {
         to_email: email,
         from_name: 'Laundry Service',
         message: `Order Details: ${orderDetails}. Total: $${total}. Phone: ${phone}`
-    }).then(() => {
-        document.getElementById('thank-you-msg').style.display = 'block';
-        // Reset form and cart
-        cart = [];
-        total = 0;
-        updateCart();
-        document.getElementById('full-name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('phone').value = '';
-    }).catch(err => {
-        alert('Error sending email: ' + err);
+}).then(() => {
+    document.getElementById('thank-you-msg').style.display = 'block';
+    // Reset form and cart
+    cart = [];
+    total = 0;
+    updateCart();
+    document.getElementById('full-name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    // Reset all buttons to "Add Item"
+    const buttons = document.querySelectorAll('.remove-btn');
+    buttons.forEach(button => {
+        button.classList.remove('remove-btn');
+        button.classList.add('add-btn');
+        button.textContent = "Add Item";
     });
+}).catch(err => {
+    alert('Error sending email: ' + err);
 });
-
+});
 // Newsletter subscribe
 document.getElementById('subscribe-btn').addEventListener('click', () => {
     const name = document.getElementById('newsletter-name').value;
